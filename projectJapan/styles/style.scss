@@ -1,0 +1,240 @@
+$themeColor: rgba(152, 57, 255, 0.5);
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+body {
+  position: relative;
+
+  img.fixed-image {
+    height: 100vh;
+    position: fixed;
+    width: 100%;
+    z-index: -5;
+
+    bottom: 0;
+    left: 0;
+  }
+
+  header {
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    //陰影
+    box-shadow: 0 10px 6px -6px #777;
+
+    section.logo {
+      //border: 2px solid red;
+      display: flex;
+      align-items: center;
+      flex: 2 1 400px;
+      img {
+        width: 6vw;
+        height: 6vw;
+      }
+      h1 {
+        font-size: 2.5rem;
+      }
+    }
+
+    nav {
+      //border: 2px solid green;
+      flex: 5 1 500px;
+
+      ul {
+        display: flex;
+        justify-content: space-around;
+        list-style-type: none;
+        li {
+          a {
+            color: black;
+            text-decoration: none;
+            font-size: 1.35rem;
+            transition: all 0.3s ease;
+            padding: 0.3rem;
+            &:hover {
+              color: $themeColor;
+              border-bottom: 3px solid $themeColor;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  main {
+    section.background-img {
+      //設定背景圖片
+      min-height: 70vh;
+      background-image: url(../images/日本櫻花.jpg);
+      background-size: cover;
+      background-position: center;
+      transition: all 0.75s ease;
+      position: relative;
+      z-index: 0;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      div.filter {
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 100%;
+        min-height: 70vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+      }
+
+      h3 {
+        color: white;
+        font-size: 2.5rem;
+        text-align: center;
+      }
+    }
+
+    section.info-circle {
+      // border: 2px solid red;
+      background-color: white;
+      padding: 2rem 1rem;
+
+      div.circles {
+        // border: 2px solid black;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        div.circle {
+          padding: 1rem;
+          // border: 2px solid blue;
+          flex: 0 1 250px;
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+
+          img {
+            width: 80%;
+            border-radius: 50%;
+            padding: 0.25rem;
+            transition: all 0.1s ease-in;
+
+            &:hover {
+              border: 2px solid $themeColor;
+            }
+          }
+        }
+      }
+
+      h3 {
+        text-align: center;
+        font-size: 2rem;
+      }
+    }
+
+    section.empty-container {
+      height: 70vh;
+      background-color: rgba(0, 0, 0, 0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      h3 {
+        font-size: 2rem;
+        color: white;
+      }
+    }
+
+    section.google-map {
+      background-color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+
+      h3 {
+        font-size: 2.5rem;
+      }
+
+      p {
+        font-size: 1.25rem;
+        padding: 1rem;
+      }
+
+      iframe {
+        width: 100%;
+        height: 40vh;
+      }
+    }
+  }
+
+  footer {
+    color: rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    section.logo {
+      margin: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      img {
+        width: 20vw;
+        height: 20vh;
+      }
+      h3 {
+        font-size: 2rem;
+        color: white;
+      }
+    }
+
+    section.link {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      img {
+        width: 5vw;
+        height: 5vh;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  body {
+    header {
+      section.logo {
+        flex-direction: column;
+        img {
+          width: 50vw;
+          height: 50vh;
+        }
+      }
+
+      nav {
+        ul {
+          flex-direction: column;
+          li {
+            padding: 0.5rem 0.5rem;
+          }
+        }
+      }
+    }
+  }
+}
